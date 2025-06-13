@@ -12,7 +12,7 @@ const FAQ = () => {
     },
     {
       question: "Is my email and calendar data secure?",
-      answer: "Absolutely. Timeloom uses Google's official APIs with read-only access to your emails and calendar events. We don't store any of your email content or calendar data on our servers. All processing happens locally, and we only store the tags and associations you create."
+      answer: "Yes. Timeloom only uses your email and calendar data to enable core functionality like tagging and unified dashboards. We request official Google API permissions to read and modify emails and calendar events, but we do not store the actual content of your emails or calendar entries. All processing is done locally, and only essential metadata (such as tag associations and IDs) is stored securely. Your data is transmitted over encrypted connections, and we follow strict security standards including OAuth 2.0 and regular audits. Plus, Timeloom is fully open source, so you can verify our data handling practices anytime."
     },
     {
       question: "What Google permissions does Timeloom need?",

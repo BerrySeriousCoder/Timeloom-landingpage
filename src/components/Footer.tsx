@@ -1,6 +1,4 @@
-
-import React from 'react';
-import { Github, Twitter, Mail, Heart } from 'lucide-react';
+import { Github,  Mail, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -16,13 +14,10 @@ const Footer = () => {
               with a global tagging system. Open source and privacy-first.
             </p>
             <div className="flex space-x-4">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://github.com/BerrySeriousCoder/Timeloom" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Github className="w-6 h-6" />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter className="w-6 h-6" />
-              </a>
-              <a href="mailto:hello@timeloom.com" className="text-gray-400 hover:text-white transition-colors">
+              <a href="mailto:support@timeloom.com" className="text-gray-400 hover:text-white transition-colors">
                 <Mail className="w-6 h-6" />
               </a>
             </div>
@@ -35,8 +30,6 @@ const Footer = () => {
               <li><a href="#features" className="text-gray-300 hover:text-white transition-colors">Features</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Pricing</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Integrations</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">API</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Roadmap</a></li>
             </ul>
           </div>
           
@@ -47,8 +40,8 @@ const Footer = () => {
               <li><Link to="/privacy" className="text-gray-300 hover:text-white transition-colors">Privacy Policy</Link></li>
               <li><Link to="/terms" className="text-gray-300 hover:text-white transition-colors">Terms of Service</Link></li>
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Documentation</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Support</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+              <li><Link to="/terms" className="text-gray-300 hover:text-white transition-colors">Support</Link></li>
+              <li><Link to="/terms" className="text-gray-300 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
         </div>

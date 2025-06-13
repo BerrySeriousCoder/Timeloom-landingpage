@@ -45,9 +45,9 @@ const HeroSection = () => {
               Get Started Free
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-2xl hover:border-blue-600 hover:text-blue-600 transition-all duration-300 font-semibold text-lg hover:scale-105">
+            <a href="#demo" className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-2xl hover:border-blue-600 hover:text-blue-600 transition-all duration-300 font-semibold text-lg hover:scale-105 inline-flex items-center justify-center">
               Watch Demo
-            </button>
+            </a>
           </div>
           
           {/* Trust indicators */}
