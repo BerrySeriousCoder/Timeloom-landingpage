@@ -118,7 +118,7 @@ const Terms = () => {
             
             <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Governing Law</h2>
             <p className="text-gray-700 mb-6">
-              These terms shall be governed by and construed in accordance with the laws of [Your Jurisdiction], 
+              These terms shall be governed by and construed in accordance with the laws of India, 
               without regard to its conflict of law provisions.
             </p>
             
@@ -129,7 +129,7 @@ const Terms = () => {
             <div className="bg-gray-50 p-4 rounded-lg mt-4">
               <p className="text-gray-700">
                 Email: legal@timeloom.com<br />
-                GitHub Issues: <a href="https://github.com/timeloom/issues" className="text-blue-600 hover:underline">https://github.com/timeloom/issues</a><br />
+                GitHub Issues: <a href="https://github.com/BerrySeriousCoder/Timeloom" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">https://github.com/BerrySeriousCoder/Timeloom/issues</a><br />
                 Support: support@timeloom.com
               </p>
             </div>

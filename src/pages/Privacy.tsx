@@ -139,7 +139,7 @@ const Privacy = () => {
             <div className="bg-gray-50 p-4 rounded-lg mt-4">
               <p className="text-gray-700">
                 Email: privacy@timeloom.com<br />
-                GitHub: <a href="https://github.com/timeloom" className="text-blue-600 hover:underline">https://github.com/timeloom</a>
+                GitHub: <a href="https://github.com/BerrySeriousCoder/Timeloom" className="text-blue-600 hover:underline">https://github.com/BerrySeriousCoder/Timeloom</a>
               </p>
             </div>
           </div>
