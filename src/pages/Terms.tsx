@@ -46,7 +46,7 @@ const Terms = () => {
             <div className="bg-blue-50 p-6 rounded-lg mb-6">
               <h4 className="font-semibold text-blue-900 mb-3">Required Permissions:</h4>
               <ul className="list-disc list-inside space-y-1 text-blue-800 text-sm">
-                <li><strong>Gmail API:</strong> Read, modify, send, and compose emails; manage labels</li>
+                <li><strong>Gmail API:</strong> Read, modify, send, and compose emails; manage labels on your behalf</li>
                 <li><strong>Calendar API:</strong> Read and modify calendar events</li>
               </ul>
               <p className="text-blue-800 mt-3 text-sm">

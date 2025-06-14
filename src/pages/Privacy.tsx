@@ -44,17 +44,12 @@ const Privacy = () => {
             <div className="bg-gray-50 p-6 rounded-lg mb-6">
               <h4 className="font-semibold text-gray-900 mb-3">Gmail API Scopes:</h4>
               <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm font-mono">
-                <li>https://www.googleapis.com/auth/gmail.readonly - Read email messages</li>
-                <li>https://www.googleapis.com/auth/gmail.modify - Modify email labels</li>
-                <li>https://www.googleapis.com/auth/gmail.send - Send emails on your behalf (for notifications)</li>
-                <li>https://www.googleapis.com/auth/gmail.compose - Compose draft emails</li>
-                <li>https://www.googleapis.com/auth/gmail.labels - Manage email labels</li>
+                <li>https://www.googleapis.com/auth/gmail.modify — Read, label, and send emails on your behalf</li>
               </ul>
               
               <h4 className="font-semibold text-gray-900 mb-3 mt-4">Calendar API Scopes:</h4>
               <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm font-mono">
-                <li>https://www.googleapis.com/auth/calendar - Access and modify calendar events</li>
-                <li>https://www.googleapis.com/auth/calendar.events - Create and modify calendar events</li>
+                <li>https://www.googleapis.com/auth/calendar - Manage your calendars and events</li>
               </ul>
             </div>
             
@@ -119,10 +114,10 @@ const Privacy = () => {
             
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Google API Compliance</h2>
             <p className="text-gray-700 mb-6">
-              Timeloom's use of information received from Google APIs adheres to Google API Services User Data Policy, 
-              including the Limited Use requirements. We do not use Gmail or Calendar data for advertising, 
-              do not sell any data to third parties, and do not use the data for any purpose other than providing 
-              the core Timeloom functionality.
+            Timeloom’s use of Google API data adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Google API Services User Data Policy</a>,
+            including Limited Use. We do not use Gmail or Calendar data for advertising, do not sell data to third parties, and
+            only use data to provide core Timeloom functionality.
+
             </p>
             
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Changes to This Policy</h2>
