@@ -12,17 +12,16 @@ const DemoVideoSection = () => {
           Watch a quick demo to see how Timeloom can transform your productivity.
         </p>
         <div className="relative w-full max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-gray-200/70 bg-white p-4 transition-all duration-500 hover:shadow-3xl hover:scale-[1.01]">
-          <video
-            // controls
-            autoPlay
-            muted
-            playsInline
-            className="w-full h-auto rounded-lg"
-            poster="/path/to/poster.jpg" // Optional: Add a poster image path here
-          >
-            <source src={video} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+        <div className="w-full aspect-video">
+            <iframe
+              className="w-full h-full rounded-lg"
+              src="https://player.vimeo.com/video/1093272547?h=900987d428&badge=0&autopause=0&player_id=0&app_id=58479"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              title="Timeloom demo video"
+              allowFullScreen
+            ></iframe>
+          </div>
         </div>
 
         {/* Floating text and icons */}
