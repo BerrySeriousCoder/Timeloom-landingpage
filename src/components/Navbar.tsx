@@ -30,9 +30,9 @@ const Navbar = () => {
           <a href="https://github.com/BerrySeriousCoder/Timeloom" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-600 p-2 rounded-lg hover:bg-gray-50/50 transition-all duration-200 flex items-center gap-2">
             <Github size={16} />
           </a>
-          <button className="bg-gray-900 text-white px-5 py-2 rounded-xl hover:bg-gray-800 transition-all duration-200 font-medium text-sm hover:scale-105 shadow-sm">
+          <a href="https://app.timeloom.xyz/" className="bg-gray-900 text-white px-5 py-2 rounded-xl hover:bg-gray-800 transition-all duration-200 font-medium text-sm hover:scale-105 shadow-sm flex items-center justify-center">
             Get Started
-          </button>
+          </a>
         </div>
       </div>
 
@@ -70,9 +70,9 @@ const Navbar = () => {
                 Open Source
               </a>
               <div className="pt-2 pb-1">
-                <button className="w-full bg-gray-900 text-white px-4 py-2 rounded-xl hover:bg-gray-800 transition-all duration-200 font-medium text-sm">
+                <a href="https://app.timeloom.xyz/" className="w-full bg-gray-900 text-white px-4 py-2 rounded-xl hover:bg-gray-800 transition-all duration-200 font-medium text-sm flex items-center justify-center">
                   Get Started
-                </button>
+                </a>
               </div>
             </div>
           </div>

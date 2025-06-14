@@ -31,10 +31,10 @@ const CTA = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <button className="group bg-gray-900 text-white px-8 py-4 rounded-xl hover:bg-gray-800 transition-all duration-300 font-semibold text-lg flex items-center gap-2 hover:scale-105 shadow-lg hover:shadow-xl">
+            <a href="https://app.timeloom.xyz/" className="group bg-gray-900 text-white px-8 py-4 rounded-xl hover:bg-gray-800 transition-all duration-300 font-semibold text-lg flex items-center gap-2 hover:scale-105 shadow-lg hover:shadow-xl">
               Get access
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
             <button className="bg-gray-100 text-gray-900 px-8 py-4 rounded-xl hover:bg-gray-200 transition-all duration-300 font-semibold text-lg hover:scale-105">
               Book a call
             </button>

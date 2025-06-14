@@ -1,5 +1,6 @@
 import { Github,  Mail, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import profile from '../assets/profile.jpeg';
 
 const Footer = () => {
   return (
@@ -45,16 +46,24 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+
+        <div className="fixed bottom-4 right-4 flex items-center text-white text-muted-foreground text-sm z-10 group bg-gray-800 p-2 rounded-md shadow-lg"> {/* Added background, padding, rounded corners, and shadow */}
+          Made with <span className="text-red-500 mx-1">❤️</span> by
+          <a href="https://www.linkedin.com/in/harsh-vardhan-singh-2ab454257/" target="_blank" rel="noopener noreferrer" className="ml-1 hover:text-purple-light transition-colors transform group-hover:scale-110"> {/* Added transform and group-hover:scale-110 */}
+            <img src={profile} alt="Hero" className="inline-block text-xl rounded-full h-8 w-8 object-cover" />
+          </a>
+        </div>
         
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2024 Timeloom. All rights reserved.
+              © 2025 Timeloom. All rights reserved.
             </p>
             <div className="flex items-center space-x-2 mt-4 md:mt-0">
-              <span className="text-gray-400 text-sm">Made with</span>
-              <Heart className="w-4 h-4 text-red-500 fill-current" />
-              <span className="text-gray-400 text-sm">by the open source community</span>
+              <span className=" text-sm">Made with</span>
+              <Heart className="w-4 h-4 text-red-500 fill-current" /> 
+              <span className=" text-sm">by</span> 
+              <img src={profile} alt="Profile Icon" className="w-4 h-4 rounded-full" />
             </div>
           </div>
         </div>
