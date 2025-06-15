@@ -18,9 +18,9 @@ const Navbar = () => {
           <Link to="/" className="text-gray-700 hover:text-blue-600 hover:bg-white/80 px-4 py-2 text-sm font-medium transition-all duration-200 rounded-lg">
             Home
           </Link>
-          <Link to="/privacy" className="text-gray-700 hover:text-blue-600 hover:bg-white/80 px-4 py-2 text-sm font-medium transition-all duration-200 rounded-lg">
+          <a href="https://www.timeloom.xyz/privacy" className="text-gray-700 hover:text-blue-600 hover:bg-white/80 px-4 py-2 text-sm font-medium transition-all duration-200 rounded-lg">
             Privacy
-          </Link>
+          </a>
           <Link to="/terms" className="text-gray-700 hover:text-blue-600 hover:bg-white/80 px-4 py-2 text-sm font-medium transition-all duration-200 rounded-lg">
             Terms
           </Link>
@@ -59,9 +59,9 @@ const Navbar = () => {
               <Link to="/" className="block text-gray-700 hover:text-blue-600 hover:bg-gray-50/50 px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200">
                 Home
               </Link>
-              <Link to="/privacy" className="block text-gray-700 hover:text-blue-600 hover:bg-gray-50/50 px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200">
+              <a href="https://www.timeloom.xyz/privacy" className="block text-gray-700 hover:text-blue-600 hover:bg-gray-50/50 px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200">
                 Privacy
-              </Link>
+              </a>
               <Link to="/terms" className="block text-gray-700 hover:text-blue-600 hover:bg-gray-50/50 px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200">
                 Terms
               </Link>
