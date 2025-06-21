@@ -84,6 +84,19 @@ const Privacy = () => {
               <li>Improve our service and develop new features</li>
             </ul>
             
+<h2 className="text-2xl font-bold text-gray-900 mb-4">Data Sharing and Disclosure</h2>
+            <p className="text-gray-700 mb-4">
+              Timeloom does not share, transfer, or disclose Google user data to any third parties.
+              We only store the minimum metadata necessary (such as tag names, tag associations, and IDs of Gmail messages or Calendar events) in our database to provide the core functionality of Timeloom.
+            </p>
+            <p className="text-gray-700 mb-4">
+              We do not sell, rent, or use Google user data for advertising, and we do not share data with any external parties, service providers, or partners.
+              The only exceptions where data may be disclosed are:
+            </p>
+            <ul className="list-disc list-inside text-gray-700 mb-6 space-y-1">
+              <li>If required by law (e.g., in response to a valid legal request)</li>
+              <li>With your explicit consent (e.g., if you request an export or integration)</li>
+            </ul>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Data Security</h2>
             <p className="text-gray-700 mb-4">
               We implement industry-standard security measures to protect your data:
