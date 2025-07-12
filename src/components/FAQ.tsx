@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -35,16 +36,27 @@ const FAQ = () => {
   return (
     <section id="faq" className="py-20 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        <div className="text-center mb-16">
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold font-thicccboi text-gray-900 mb-6"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
             Frequently Asked
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Questions</span>
-          </h2>
-          <p className="text-xl text-gray-600">
+          </motion.h2>
+          <motion.p
+            className="text-xl text-gray-600 font-thicccboi"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+          >
             Everything you need to know about Timeloom and how it works.
-          </p>
+          </motion.p>
         </div>
-        
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div
@@ -55,7 +67,7 @@ const FAQ = () => {
                 className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
-                <span className="text-lg font-semibold text-gray-900 pr-4">
+                <span className="text-lg font-semibold text-gray-900 pr-4 font-thicccboi">
                   {faq.question}
                 </span>
                 <ChevronDown
@@ -64,14 +76,13 @@ const FAQ = () => {
                   }`}
                 />
               </button>
-              
               <div
                 className={`overflow-hidden transition-all duration-300 ${
                   openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
                 <div className="px-8 pb-6">
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed font-thicccboi">
                     {faq.answer}
                   </p>
                 </div>

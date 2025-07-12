@@ -1,8 +1,8 @@
 
-import React from 'react';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
-import BentoGrid from '../components/BentoGrid';
+import StatsSection from '../components/StatsSection';
+import FeaturesShowcaseSection from '../components/FeaturesShowcaseSection';
 import DemoVideoSection from '../components/DemoVideoSection';
 import FAQ from '../components/FAQ';
 import CTA from '../components/CTA';
@@ -13,8 +13,8 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
-      <BentoGrid />
-      <DemoVideoSection />
+      <StatsSection />
+      <FeaturesShowcaseSection />
       <FAQ />
       <CTA />
       <Footer />

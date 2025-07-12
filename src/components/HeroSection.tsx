@@ -1,82 +1,161 @@
 
-import React from 'react';
-import { ArrowRight, Calendar, Mail, BarChart3 } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const HeroSection = () => {
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setMessage('');
+    setError('');
+    try {
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/beta-signup`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setMessage(data.message || 'Request received!');
+        setEmail('');
+      } else {
+        setError(data.error || 'Something went wrong.');
+      }
+    } catch (err) {
+      setError('Network error. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-400/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-300/10 rounded-full blur-3xl animate-pulse delay-500"></div>
-      </div>
-      
-      {/* Floating icons */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 animate-float">
-          <Mail className="w-8 h-8 text-blue-400/60" />
-        </div>
-        <div className="absolute top-1/3 right-1/4 animate-float delay-300">
-          <Calendar className="w-10 h-10 text-purple-400/60" />
-        </div>
-        <div className="absolute bottom-1/3 left-1/3 animate-float delay-700">
-          <BarChart3 className="w-9 h-9 text-indigo-400/60" />
-        </div>
-      </div>
-      
-      <div className="relative z-10 mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-            Tag Everything.
-            <br />
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Track Progress.
-            </span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            The only productivity tool that unifies your emails, calendar events, and projects with a global tagging system. 
-            Visualize progress like never before.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <a href="https://app.timeloom.xyz/" className="group bg-blue-600 text-white px-8 py-4 rounded-2xl hover:bg-blue-700 transition-all duration-300 font-semibold text-lg flex items-center gap-2 hover:scale-105 shadow-lg hover:shadow-xl">
-              Get Started Free
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a href="#demo" className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-2xl hover:border-blue-600 hover:text-blue-600 transition-all duration-300 font-semibold text-lg hover:scale-105 inline-flex items-center justify-center">
-              Watch Demo
-            </a>
-          </div>
-          
-          {/* Trust indicators */}
-          <div className="flex flex-col items-center space-y-4">
-            <p className="text-sm text-gray-500">Trusted by productivity enthusiasts worldwide</p>
-            <div className="flex items-center space-x-6 text-gray-400">
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-sm">Open Source</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                <span className="text-sm">Privacy First</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
-                <span className="text-sm">Google Verified</span>
+    <section className="relative flex flex-col items-center justify-center w-full bg-white px-2 pt-10 pb-0">
+      <motion.div
+        className="relative w-full mx-auto bg-[#6349f8] rounded-[2.5rem] md:rounded-[3.5rem] xl:rounded-[4rem] px-4 md:px-16 pt-16 pb-48 flex flex-col items-center shadow-lg overflow-visible min-h-[650px] md:min-h-[750px] xl:min-h-[850px] justify-center"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: {},
+          visible: {
+            transition: {
+              staggerChildren: 0.15,
+            },
+          },
+        }}
+      >
+        {/* Beta badge */}
+        <motion.div
+          className="mb-6 flex justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+        >
+          <span className="bg-white/10 text-white text-xs font-semibold px-4 py-1 rounded-full border border-white/20 backdrop-blur-sm">BETA · Invite Only</span>
+        </motion.div>
+        {/* Main Title */}
+        <motion.h1
+          className="text-4xl md:text-6xl font-thicccboi font-bold text-white text-center mb-4 leading-tight"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          You Only Need a Single<br className="hidden md:block" /> Tool to Crush Productivity
+        </motion.h1>
+        {/* Subtitle */}
+        <motion.p
+          className="text-lg md:text-2xl text-white/90 text-center mb-8 max-w-2xl mx-auto font-thicccboi"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+        >
+          Reach hundreds of prospects per day across your tools. Timeloom is currently in invite-only beta. Request access to join our early users!
+        </motion.p>
+        {/* Email input and CTA */}
+        <motion.form
+          className="flex flex-col sm:flex-row gap-3 justify-center items-center w-full max-w-lg mx-auto mb-8"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          onSubmit={handleSubmit}
+        >
+          <input
+            type="email"
+            required
+            placeholder="Enter your work email"
+            className="w-full sm:w-auto flex-1 px-6 py-4 rounded-xl border-none outline-none text-base font-thicccboi bg-white text-[#6349f8] placeholder:text-[#6349f8]/60 shadow-sm focus:ring-2 focus:ring-white/60"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            disabled={loading}
+          />
+          <button
+            type="submit"
+            className="px-8 py-4 rounded-xl bg-[#1a1a1a] text-white font-thicccboi font-bold text-lg shadow hover:bg-[#333] transition-all border-2 border-transparent hover:border-white"
+            disabled={loading}
+          >
+            {loading ? 'Sending...' : 'Start now'}
+          </button>
+        </motion.form>
+        {(message || error) && (
+          <div className={`text-center mb-4 font-thicccboi ${message ? 'text-green-600' : 'text-red-600'}`}>{message || error}</div>
+        )}
+        {/* Feature highlights */}
+        <motion.div
+          className="flex flex-wrap justify-center gap-4 text-white/80 text-base font-thicccboi mb-8"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          <span className="flex items-center gap-2">✓ One Minute Setup</span>
+          <span className="flex items-center gap-2">✓ 7-Day Free Trial</span>
+          <span className="flex items-center gap-2">✓ No Credit Card Required</span>
+        </motion.div>
+        {/* Demo video overlap */}
+        <div className="absolute left-1/2 -translate-x-1/2 -bottom-52 w-full max-w-3xl z-20">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.9, delay: 0.4 }}
+          >
+            <div className="overflow-hidden bg-black rounded-2xl">
+              <div className="w-full aspect-video">
+                <iframe
+                  className="w-full h-full rounded-xl border-none shadow-none"
+                  src="https://archive.org/embed/timeloomdemo?autoplay=1"
+                  width="560"
+                  height="384"
+                  frameBorder="0"
+                  allowFullScreen
+                  title="Timeloom demo video"
+                ></iframe>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
-      
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
-        </div>
-      </div>
+        {/* Custom roundy squiggle inspired by user image */}
+        <svg className="absolute top-40 left-1/4 w-32 h-20 opacity-40" fill="none" viewBox="0 0 120 60">
+          <path d="M10 50 Q 40 10, 60 40 Q 80 70, 70 30 Q 60 0, 110 20" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+        </svg>
+        {/* New squiggle variations for more visual interest */}
+        {/* Double loop squiggle */}
+
+        {/* S-curve with a spiral */}
+        <svg className="absolute bottom-20 right-96 w-32 h-20 opacity-25" fill="none" viewBox="0 0 120 60">
+          <path d="M10 50 Q 40 10, 70 30 Q 100 50, 90 20 Q 80 0, 110 10 Q 120 20, 100 30" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+        </svg>
+        {/* Large arc with a tight loop */}
+        <svg className="absolute top-40 right-1/4 w-28 h-16 opacity-20" fill="none" viewBox="0 0 110 50">
+          <path d="M10 40 Q 60 0, 100 40 Q 80 30, 90 10" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+        </svg>
+        {/* Spiral squiggle */}
+        <svg className="absolute bottom-20 left-96 w-20 h-20 opacity-20" fill="none" viewBox="0 0 60 60">
+          <path d="M30 50 Q 10 40, 20 20 Q 30 0, 50 20 Q 60 40, 40 40 Q 20 40, 30 30" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+        </svg>
+      </motion.div>
     </section>
   );
 };
