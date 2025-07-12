@@ -115,7 +115,7 @@ const HeroSection = () => {
           <span className="flex items-center gap-2">✓ No Credit Card Required</span>
         </motion.div>
         {/* Demo video overlap */}
-        <div className="absolute left-1/2 -translate-x-1/2 -bottom-52 w-full max-w-3xl z-20">
+        <div className="absolute left-1/2 -translate-x-1/2 -bottom-14 md:-bottom-52 w-full max-w-3xl z-20">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -137,22 +137,34 @@ const HeroSection = () => {
           </motion.div>
         </div>
         {/* Custom roundy squiggle inspired by user image */}
-        <svg className="absolute top-40 left-1/4 w-32 h-20 opacity-40" fill="none" viewBox="0 0 120 60">
+        {/* Desktop placement */}
+        <svg className="hidden md:block absolute top-40 left-1/4 w-32 h-20 opacity-40" fill="none" viewBox="0 0 120 60">
           <path d="M10 50 Q 40 10, 60 40 Q 80 70, 70 30 Q 60 0, 110 20" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
         </svg>
-        {/* New squiggle variations for more visual interest */}
-        {/* Double loop squiggle */}
-
-        {/* S-curve with a spiral */}
-        <svg className="absolute bottom-20 right-96 w-32 h-20 opacity-25" fill="none" viewBox="0 0 120 60">
+        {/* S-curve with a spiral - desktop */}
+        <svg className="hidden md:block absolute bottom-20 right-96 w-32 h-20 opacity-25" fill="none" viewBox="0 0 120 60">
           <path d="M10 50 Q 40 10, 70 30 Q 100 50, 90 20 Q 80 0, 110 10 Q 120 20, 100 30" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
         </svg>
-        {/* Large arc with a tight loop */}
-        <svg className="absolute top-40 right-1/4 w-28 h-16 opacity-20" fill="none" viewBox="0 0 110 50">
+        {/* Large arc with a tight loop - desktop */}
+        <svg className="hidden md:block absolute top-40 right-1/4 w-28 h-16 opacity-20" fill="none" viewBox="0 0 110 50">
           <path d="M10 40 Q 60 0, 100 40 Q 80 30, 90 10" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
         </svg>
-        {/* Spiral squiggle */}
-        <svg className="absolute bottom-20 left-96 w-20 h-20 opacity-20" fill="none" viewBox="0 0 60 60">
+        {/* Spiral squiggle - desktop */}
+        <svg className="hidden md:block absolute bottom-20 left-96 w-20 h-20 opacity-20" fill="none" viewBox="0 0 60 60">
+          <path d="M30 50 Q 10 40, 20 20 Q 30 0, 50 20 Q 60 40, 40 40 Q 20 40, 30 30" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+        </svg>
+
+        {/* Mobile placement - more centered and less overlapping */}
+        <svg className="md:hidden absolute top-8 left-1/2 -translate-x-1/2 w-24 h-12 opacity-40" fill="none" viewBox="0 0 120 60">
+          <path d="M10 50 Q 40 10, 60 40 Q 80 70, 70 30 Q 60 0, 110 20" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+        </svg>
+        <svg className="md:hidden absolute bottom-44 left-1/2 -translate-x-1/2 w-20 h-10 opacity-25" fill="none" viewBox="0 0 120 60">
+          <path d="M10 50 Q 40 10, 70 30 Q 100 50, 90 20 Q 80 0, 110 10 Q 120 20, 100 30" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+        </svg>
+        <svg className="md:hidden absolute top-1/2 left-4 w-14 h-8 opacity-20" fill="none" viewBox="0 0 110 50">
+          <path d="M10 40 Q 60 0, 100 40 Q 80 30, 90 10" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+        </svg>
+        <svg className="md:hidden absolute top-1/2 right-4 w-10 h-10 opacity-20" fill="none" viewBox="0 0 60 60">
           <path d="M30 50 Q 10 40, 20 20 Q 30 0, 50 20 Q 60 40, 40 40 Q 20 40, 30 30" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
         </svg>
       </motion.div>

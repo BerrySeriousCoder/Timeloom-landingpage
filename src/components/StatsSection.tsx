@@ -10,7 +10,7 @@ const stats = [
 
 const StatsSection = () => {
   return (
-    <section className="w-full flex flex-col items-center bg-white pt-60 pb-12 px-2">
+    <section className="w-full flex flex-col items-center bg-white pt-28 md:pt-60 pb-12 px-2">
       <div className="w-full max-w-4xl mx-auto flex flex-col items-center mb-10">
         <motion.h2
           className="text-3xl md:text-4xl font-thicccboi font-extrabold text-[#1a1a1a] text-center mb-3"

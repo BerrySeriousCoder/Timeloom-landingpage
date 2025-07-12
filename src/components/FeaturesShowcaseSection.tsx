@@ -28,15 +28,15 @@ const FeatureSection = ({
   cardDescription: string;
 }) => (
   <motion.div
-    className="w-full flex flex-col md:flex-row items-center gap-12 p-10 md:p-16 mb-0 relative overflow-visible bg-transparent"
+    className="w-full flex flex-col md:flex-row items-center gap-6 md:gap-12 p-4 sm:p-6 md:p-16 mb-0 relative overflow-visible bg-transparent"
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.7 }}
   >
-    <div className="flex-1 flex flex-col items-center md:items-start relative z-0">
+    <div className="flex-1 flex flex-col items-center md:items-start relative z-0 w-full">
       <motion.h3
-        className="text-2xl md:text-3xl font-thicccboi font-bold text-[#1a1a1a] mb-2 text-center md:text-left"
+        className="text-xl sm:text-2xl md:text-3xl font-thicccboi font-bold text-[#1a1a1a] mb-2 text-center md:text-left"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -45,7 +45,7 @@ const FeatureSection = ({
         {title}
       </motion.h3>
       <motion.p
-        className="text-lg text-gray-600 font-thicccboi text-center md:text-left max-w-lg mb-8"
+        className="text-base sm:text-lg text-gray-600 font-thicccboi text-center md:text-left max-w-lg mb-4 md:mb-8"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -63,33 +63,33 @@ const FeatureSection = ({
         <img
           src={mainImg}
           alt={mainImgAlt}
-          className="w-full max-w-9xl object-contain md:ml-[-60px] md:mr-0 md:mt-8 md:mb-8"
-          style={{ minHeight: 600, minWidth: 900, zIndex: 0 }}
+          className="w-full max-w-xs sm:max-w-md md:max-w-9xl object-contain md:ml-[-60px] md:mr-0 md:mt-8 md:mb-8"
+          style={{ minHeight: undefined, minWidth: undefined, zIndex: 0 }}
         />
       </motion.div>
     </div>
     <motion.div
-      className="flex-1 flex flex-col items-center md:items-end relative z-10 md:-ml-32"
+      className="flex-1 flex flex-col items-center md:items-end relative z-10 w-full md:-ml-32"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.7, delay: 0.2 }}
     >
-      <div className="w-full max-w-lg bg-white p-8 mb-8 flex flex-col items-center">
+      <div className="w-full max-w-xs sm:max-w-md md:max-w-lg bg-white p-4 sm:p-6 md:p-8 mb-4 md:mb-8 flex flex-col items-center">
         {cardImg && (
           <motion.img
             src={cardImg}
             alt={cardImgAlt}
-            className="w-full h-full object-contain rounded-lg mb-6"
-            style={{ minHeight: 320, minWidth: 320 }}
+            className="w-full h-auto object-contain rounded-lg mb-4 md:mb-6"
+            style={{ minHeight: undefined, minWidth: undefined }}
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.25 }}
           />
         )}
-        <div className="font-thicccboi text-2xl text-[#6349f8] mb-2 text-center md:text-left">{cardTitle}</div>
-        <div className="text-base text-gray-600 font-thicccboi text-center md:text-left">{cardDescription}</div>
+        <div className="font-thicccboi text-lg sm:text-xl md:text-2xl text-[#6349f8] mb-2 text-center md:text-left">{cardTitle}</div>
+        <div className="text-sm sm:text-base text-gray-600 font-thicccboi text-center md:text-left">{cardDescription}</div>
       </div>
     </motion.div>
   </motion.div>
